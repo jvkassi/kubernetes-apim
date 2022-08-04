@@ -17,7 +17,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ template "am-single-node.resource.prefix" . }}-am-conf-entrypoint
+  name: {{ template "am-single-node.fullname" . }}-am-conf-entrypoint
   namespace: {{ .Release.Namespace }}
 data:
   docker-entrypoint.sh: |

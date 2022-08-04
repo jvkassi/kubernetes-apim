@@ -15,7 +15,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ template "am-single-node.resource.prefix" . }}-am-conf
+  name: {{ template "am-single-node.fullname" . }}-am-conf
   namespace : {{ .Release.Namespace }}
   {{ if .Values.wso2.deployment.am.config }}
 data:
