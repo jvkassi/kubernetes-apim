@@ -17,7 +17,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: {{ template "am-single-node.resource.prefix" . }}-am-websub-ingress
+  name: {{ template "am-single-node.fullname" . }}-am-websub-ingress
   namespace : {{ .Release.Namespace }}
 {{- if .Values.wso2.deployment.am.ingress.websub.annotations }}
   annotations:
@@ -35,7 +35,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: {{ template "am-single-node.resource.prefix" . }}-am-service
+            name: {{ template "am-single-node.fullname" . }}-am-service
             port:
               number: 8021
 {{- end -}}
